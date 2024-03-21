@@ -12,11 +12,8 @@ require_once(S_CONF_DIR . 'errorClass.php');
 $response = '';
 try {
 	if(!array_key_exists(1, $argv)) throw new Err("No parameter passed");
-	parse_str($argv[1], $args);
-	var_dump($argv);
-	die();
-	$request = $args['rq'];
-	$service = $args['sb'] . 'Service';
+	$request = "init";
+	$service = $argv[1] . 'Service';
 	if (!file_exists(S_SERVICES_DIR . $service . '.php')) throw new Err('Request Unknown');
 	require_once(S_LIBS_DIR . 'dbclass.php');
 	require_once(S_CONF_DIR . 'service.php');
