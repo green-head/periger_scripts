@@ -14,6 +14,7 @@ try {
 	if(!array_key_exists(1, $argv)) throw new Err("No parameter passed");
 	parse_str($argv[1], $args);
 	var_dump($argv[1]);
+	die();
 	$request = $args['rq'];
 	$service = $args['sb'] . 'Service';
 	if (!file_exists(S_SERVICES_DIR . $service . '.php')) throw new Err('Request Unknown');
