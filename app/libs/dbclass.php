@@ -2,7 +2,7 @@
 class dbase
 {
 	public $db;
-	function __construct($dbase = "emlak", $user_name="qors", $password="8lJ35UHKsFGw8Mzr8fWtZR9O", $ip="localhost")
+	function __construct($dbase = "emlak", $user_name="php_scripts", $password="vTEiGhzyVaUo8RRp", $ip="localhost")
 	{
 		$this->db = @new mysqli($ip, $user_name, $password, $dbase);
 		if ($this->db->connect_errno){

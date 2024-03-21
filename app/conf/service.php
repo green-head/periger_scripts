@@ -3,24 +3,6 @@ class Service
 {
 	protected $db;
 	public $user;
-	public $tCols=[
-		"Bidlaw.users"=>["Bidlaw", "`users`", "`UserID`", "`Title`", "CONCAT('".BIDLAW_GALLERY_LINK."', `Photo`)"],
-		"realestateusa.properties"=>["realestateusa", "`properties`", "`id`", "`full_address_new`", "''"],
-		"realtor.realtor"=>["realtor", "`realtor`", "`id`", "`title`", "CONCAT('".REALTOR_LOGO."', `photo_url`)xs"],
-		"admin_operism.businesses"=>["admin_operism", "`businesses`", "`id`", "`title`", "CONCAT('".OPERISM_LOGO."', `logo`)"],
-		"users"=>[false, "`users`", "`id`", "CONCAT(`name`, ' ', `surname`)", "CONCAt('".GALLERY_LINK."', `pp`)"],
-		"gtfs_stops"=>[false, "`gtfs_stops`", "`id`", "`name`", "''"],
-		"bestplaces"=>[false, "`bestplaces`", "`id`", "`zip`", "''"],
-		"article"=>[false, "`article`", "`id`", "`title`", "`ImageURL`"],
-		"schools"=>[false, "`schools`", "`id`", "`title`", "''"],
-		"poi"=>[false, "`poi`", "`id`", "`title`", "''"],
-		"homes"=>[false, "`homes`", "`id`", "`title`", "`ImageURL`"]
-	];
-	function __construct()
-	{
-		$this->db = new dbase();
-		$this->checkUserToken();
-	}
 	protected function checkUserToken()
 	{
         if((isset($_POST['token'])) && (!empty($_POST['token']))){
